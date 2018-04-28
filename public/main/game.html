@@ -20,12 +20,10 @@
            
             game.load.image('underwater', 'Main/assets/underwater.png');
             game.load.image('star', 'Main/assets/glitter2.png');
-      
             game.load.image('floor', 'Main/assets/planetHalf_Mid.png');
             game.load.image('cliffs', 'Main/assets/stoneMid.png');
             game.load.image('shroom', 'Main/assets/props/mushroomRed.png');
             game.load.image('seabed', 'Main/assets/props/seabed.png');
-          
             game.load.image('dewgong', 'Main/assets/dewgong.png');
             game.load.image('cloyster', 'Main/assets/cloyster.png');
             game.load.image('tentacruel', 'Main/assets/tentacruel.png');
@@ -33,7 +31,6 @@
             game.load.image('garados', 'Main/assets/garados.png');
             game.load.image('poliwag', 'Main/assets/Poliwag.png');
             game.load.spritesheet('dude', 'Main/assets/pokeballz.png', 32, 48);
-            //changed spritesheet to image for pokeball
         }
         let platforms;
         let player;
@@ -82,8 +79,6 @@
                 shroom = game.add.group();
                 seabed = game.add.group();
                 cliffs = game.add.group();
-                // flower = game.add.group();
-
 
                 //  We will enable physics for any object that is created in this group
                 platforms.enableBody = true;
@@ -138,15 +133,12 @@
                 for (let i = 0; i < (5*70); i+=70) {
                     createCliff(i,250, cliffs);
                 }
-
-               
+             
                 //create seabed here
-                var mushroom = 
-                seabed.create(800, game.world.height - 770, 'seabed');
-                mushroom = seabed.create(0, game.world.height - 208, 'seabed'); //fine
-                mushroom = seabed.create(0, game.world.height - 770, 'seabed'); //fine
-                mushroom = seabed.create(300, game.world.height - 1120, 'seabed'); 
-
+                var sea = seabed.create(800, game.world.height - 770, 'seabed');
+                    sea = seabed.create(0, game.world.height - 208, 'seabed'); 
+                    sea = seabed.create(0, game.world.height - 770, 'seabed'); 
+                    sea = seabed.create(300, game.world.height - 1120, 'seabed'); 
 
     
                 dewgong1 = game.add.sprite(1600, game.world.height - 100, 'dewgong');
@@ -213,9 +205,6 @@
                 var garadosMotion = game.add.tween(garados).to({
                     x: garados.body.x - 300
                 }, 10000, 'Linear', true, 0, 100, true);
-
-
-
 
 
                 //***** The player and its settings 32, game.world.height - 150 player spawn **********************
@@ -413,22 +402,20 @@
 
                 function youLost() {
                 
-                bummerText = game.add.text(150,200, 'You are out of time! :( ', {fontSize: '70px', fill: 'purple'});
-                loseGameText = game.add.text(250, 300,  'Refresh to play again!', { fontSize: '30px', fill: 'purple'});
-                loseGameText.fixedToCamera = true;
-                bummerText.fixedToCamera = true;
+                outOfTimeText = game.add.text(150,200, 'You are out of time! :( ', {fontSize: '70px', fill: 'purple'});
+                lostGameText = game.add.text(250, 300,  'Refresh to play again!', { fontSize: '30px', fill: 'purple'});
+                lostGameText.fixedToCamera = true;
+                outOfTimeText.fixedToCamera = true;
                 player.kill();
                 } 
-                    // setTimeout(function() { invincible = false; }, 3000);
-                    
-                // }
+                
                   // win game 
                 if ((score === 60)) {
                     game.time.events.pause()
-                    epicText = game.add.text(150, 200, 'You got em all! :) ', { fontSize: '80px', fill: 'purple' });
+                    gotEmAllText = game.add.text(150, 200, 'You got em all! :) ', { fontSize: '80px', fill: 'purple' });
                     winGameText = game.add.text(250, 300, 'Refresh to Play again', { fontSize: '40px', fill: 'purple' });
                     winGameText.fixedToCamera = true;
-                    epicText.fixedToCamera = true;
+                    gotEmAllText.fixedToCamera = true;
                     player.kill();
                 }
 
