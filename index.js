@@ -14,6 +14,6 @@ app.use(morgan('dev'));
 
 app.use('/', router);
 
-app.listen(process.env.PORT || 3001,function() {
-    console.log('Keeping it 3001!')
+app.listen(process.env.PORT || 8080,function() {
+    console.log('Keeping it 8080!')
 })
