@@ -13,7 +13,7 @@ Not yet deployed, clone the repo and check it out on your localhost!
 
 * npm start
 
-* http://localhost:3001
+* http://localhost:8080
 ---
 
 ### In Progress:
