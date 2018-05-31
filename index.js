@@ -3,6 +3,8 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const path = require('path');
 const app = express()
+const router = express.Router();
+
 
 
 app.use(express.static('public'));
@@ -30,7 +32,7 @@ app.listen(process.env.PORT || 8080,function() {
   })
 
   // sends game.html
-  app.use('*', (req, res) => {
+  router.use('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/Main/game.html'))
   })
 
