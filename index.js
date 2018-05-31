@@ -4,9 +4,6 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const app = express()
 
-
-
-
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -29,6 +26,11 @@ app.listen(process.env.PORT || 8080,function() {
     } else {
       next()
     }
+  })
+
+  // sends game.html
+  app.use('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/Main/game.html'))
   })
 
   // error handling endware
