@@ -3,7 +3,7 @@ const router = express.Router();
 const path = require('path');
 
 router.get('/', function(req, res) {
-    res.sendFile(('/Main/game.html'));
+    res.sendFile(('public/Main/game.html'));
 })
 
 module.exports = router;
