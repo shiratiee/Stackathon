@@ -3,6 +3,7 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const path = require('path');
 const app = express()
+const router = express.Router();
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
