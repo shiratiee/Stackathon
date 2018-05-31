@@ -5,15 +5,10 @@
 ### Description: 
 You are a pokeball in the sea, can you catch them all before time runs out?
 A platformer game made with Phaser and it's Arcade Physics system.
-Not yet deployed, clone the repo and check it out on your localhost!
 
-* git clone https://github.com/shiratiee/Stackathon.git
+Deployed! Check it out at:
 
-* npm install
-
-* npm start
-
-* http://localhost:8080
+http://boiling-hamlet-25801.herokuapp.com/
 ---
 
 ### In Progress:
