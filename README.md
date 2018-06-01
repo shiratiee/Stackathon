@@ -8,7 +8,7 @@ A platformer game made with Phaser and it's Arcade Physics system.
 
 Deployed! Check it out at:
 
-http://boiling-hamlet-25801.herokuapp.com/
+https://boiling-hamlet-25801.herokuapp.com/
 ---
 
 ### In Progress:
