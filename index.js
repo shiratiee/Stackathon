@@ -19,9 +19,9 @@ app.listen(process.env.PORT || 8080,function() {
 app.use(express.static(path.join(__dirname, 'public')))
 
 // sends game.html
-router.use('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/Main/game.html'))
-})
+// router.use('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'public/Main/game.html'))
+// })
 
 // any remaining requests with an extension (.js, .css, etc.) send 404
 app.use((req, res, next) => {
@@ -32,6 +32,11 @@ app.use((req, res, next) => {
   } else {
     next()
   }
+})
+
+// sends game.html
+app.use('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/Main/game.html'))
 })
 
 // error handling endware
